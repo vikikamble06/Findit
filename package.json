@@ -7,7 +7,7 @@
     "dev:server": "npm --prefix server run dev",
     "dev:client": "npm --prefix client run dev",
     "start": "npm --prefix server start",
-    "build": "npm --prefix client run build",
+    "build": "npm --prefix client install && npm --prefix client run build && node -e \"const fs = require('fs'); fs.cpSync('client/dist', 'dist', {recursive: true});\"",
     "seed": "npm --prefix server run seed",
     "test": "npm --prefix server run test && npm --prefix client run test",
     "test:server": "npm --prefix server run test",
